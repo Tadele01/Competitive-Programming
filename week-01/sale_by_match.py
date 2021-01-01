@@ -1,10 +1,11 @@
 def sale_by_match(l, length):
     hash_map = dict()
+    pair = 0
     for i in range(length):
         if l[i] in hash_map:
             v = hash_map[l[i]]
-            v += 1
-            hash_map[l[i]] = v
+            pair +=1
+            hash_map[l[i]] = 0
         else:
             hash_map[l[i]] = 1
     accumlator = 0

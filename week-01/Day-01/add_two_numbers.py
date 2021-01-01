@@ -6,14 +6,6 @@ class ListNode:
     def __init__(self, val, next=None):
         self.val = val
         self.next = next
-    def size(self):
-        counter = 1
-        next_ = self.next
-        while self.next != None:
-            self.next = self.next.next
-            counter +=1
-        self.next = next_
-        return counter
 def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
     l1_list = []
     l2_list = []

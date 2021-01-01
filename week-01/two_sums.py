@@ -15,7 +15,7 @@ class TwoSums:
         hash_map = dict()
         for i in range(len(nums)):
             value = target - nums[i]
-            if hash_map.get(value):
+            if value in hash_map:
                 arr = [i]
                 arr.append(hash_map.get(value))
                 return arr

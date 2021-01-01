@@ -14,29 +14,39 @@ class ListNode:
             counter +=1
         self.next = next_
         return counter
-def add_two_numbers(l1, l2):
-    l1_int = []
-    l2_int = []
+def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    l1_list = []
+    l2_list = []
     while l1 != None:
-        l1_int.append(str(l1.val))
+        val = l1.val
+        l1_list.append(str(val))
         l1 = l1.next
     while l2 != None:
-        l2_int.append(str(l2.val))
+        val = l2.val
+        l2_list.append(str(val))
         l2 = l2.next
-    l1_str = int(''.join(l1_int))
-    l2_str = int((''.join(l2_int)))
-    summation = str(l1_str + l2_str)
-    print(summation)
-    n = ListNode(summation[-1])
-    counter = 0
-    if len(summation) == 1:
-        return n
-    for i in range(len(summation)-2, -1, -1):
-        j = ListNode(summation[i])
-        n.next = j
-        counter +=1
-        if counter == 1:
-            z = n   
-        n = j
-    return z
+    l1_list.reverse()
+    l2_list.reverse()
+    l1_str = ''.join(l1_list)
+    l2_str = ''.join(l2_list)
+    summation = int(l1_str) + int(l2_str)
+    summation_str = str(summation)
+    if len(summation_str) == 1:
+        return ListNode(int(summation_str[0]))
+    summation_str = reversed(summation_str)
+    head = next(summation_str)
+    node = ListNode(int(head))
+    data = True
+    count = 0
+    while data:
+        data = next(summation_str, None)
+        if data == None:
+            break
+        j = ListNode(int(data))
+        node.next = j
+        count +=1
+        if count == 1:
+            head = node
+        node = j
+    return head
     

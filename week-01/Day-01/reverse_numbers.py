@@ -1,16 +1,19 @@
 #reverse integers
 
 def reverse(x: int) -> int:
-    y = list(str(x))
-    negative = None
-    if y[0] == '-':
+    num = ''
+    negative = False
+    if x < 0:
         negative = True
-        y.pop(0)
-    y.reverse()
-    y = ''.join(y)
-    y = int(y)
-    if y > (-2147483648) and y <(2147483647):
+        x = -1*x
+    while x != 0:
+        rem = x % 10
+        x = x // 10
+        num += str(rem)
+    num = int(num)
+    if num > (-2147483648) and num <(2147483647):
         if negative:
-            return -1 * y
-        return y
+            return -1 * num
+        return num
     return 0
+print(reverse(-2147483648))

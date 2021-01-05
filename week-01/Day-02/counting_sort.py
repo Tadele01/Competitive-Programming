@@ -3,6 +3,9 @@ def counting_sort(arr):
         In counting sort we pick the max element from the array and build a max+1 range array
         for storing how many times each element is repeated then from it we can build a sorted
         version of our array 
+
+        its running time is O(n + k) where k is the larges number in the given array
+        its space complexity is O(n) because we used additional memory
     '''
     max_ = arr[0]
     min_ = arr[0]

@@ -15,5 +15,3 @@ def bubble_sort(arr):
                 arr[i] = arr[j]
                 arr[j] = tmp
     return arr
-
-print(bubble_sort([4, 5, 6, 12, 12, -1, 0]))

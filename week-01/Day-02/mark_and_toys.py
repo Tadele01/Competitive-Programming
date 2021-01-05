@@ -7,7 +7,7 @@ def maximumToys(prices, k):
            for optimizing our sorting a little bit for practice purpose 
     '''
     
-    mark_range = []
+    '''mark_range = []
     for elt in prices:
         if k >= elt:
             mark_range.append(elt)
@@ -22,6 +22,18 @@ def maximumToys(prices, k):
         for j in range(counter[i]):
             sorted_prices.append(i)
     
+    max_buy = 0
+    index = 0
+    count = 0
+    while len(sorted_prices) > index:
+        max_buy += sorted_prices[index]
+        if max_buy <=k:
+            count +=1
+        if max_buy > k:
+            return count
+        index +=1
+    return count'''
+    sorted_prices = sorted(prices)
     max_buy = 0
     index = 0
     count = 0

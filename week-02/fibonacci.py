@@ -7,9 +7,8 @@ def fibonacci(n):
 
 def fib_iterative(n):
     a, b = 0, 1
-    for i in range(n):
+    for _ in range(n):
         tmp = a
         a = b
         b = tmp + a
     return b
-

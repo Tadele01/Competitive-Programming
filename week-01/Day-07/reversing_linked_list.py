@@ -19,3 +19,10 @@ def reverseList(head):
             node.next = cur_node
             node = cur_node
         return head
+
+def reverseRecurssion(self, node, prev=None):
+    if not node:
+        return prev
+    n = node.next
+    node.next = prev
+    return self.reverseRecurssion(n, node)

@@ -7,3 +7,5 @@ def triangle_2(n):
         if i % 2 == 1:
             print(' '*counter , '*'*i)
             counter -=1
+
+triangle_2(5)

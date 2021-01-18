@@ -3,3 +3,4 @@ def triangle_1(n):
         print('*'*i)
     
 
+triangle_1(5)

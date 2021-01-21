@@ -1,3 +1,8 @@
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#        self.val = val
+#        self.left = left
+#       self.right = right
 class Solution:
     def searchBST(self, root: TreeNode, val: int) -> TreeNode:
         found = self.root_finder(root, val)

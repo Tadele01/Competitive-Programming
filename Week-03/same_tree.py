@@ -6,7 +6,7 @@ class TreeNode:
 
 class Solution:
 
-    def sameTree(self, p:TreeNode, q:TreeNode)-> bool:
+    def isSameTree(self, p:TreeNode, q:TreeNode)-> bool:
 
         p_arr = []
         q_arr = []
@@ -30,3 +30,15 @@ class Solution:
             self.traverse(root.right, arr)
 
         arr.append(None)
+    def isSameTree2(self, p, q):
+        if p and q:
+            if p.val != q.val:
+                return False
+            else:
+                left = self.isSameTree(p.left, q.left)
+                right = self.isSameTree(p.right, q.right)
+                return left and right
+            
+        if (p and not q) or (not p and q):
+            return False
+        return True

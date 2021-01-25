@@ -22,3 +22,15 @@ class Solution:
                 self.invertTree(root.left)
                 self.invertTree(root.right)
         return root
+
+    def invertTree_BFS(self, root:TreeNode)-> TreeNode:
+        queue = [root]
+        while queue:
+            front = queue.pop(0)
+            if front:
+                front.left, front.right = front.right, front.left
+                if front.left:
+                    queue.append(front.left)
+                if front.right:
+                    queue.append(front.right)
+        return root

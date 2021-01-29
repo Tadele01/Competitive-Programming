@@ -5,7 +5,7 @@ class Solution:
         start = 1
         index = None
         while start <= n:
-            middle (n + start) // 2
+            middle = (n + start) // 2
             if self.is_bad_version(middle):
                 index = middle
                 n = middle - 1

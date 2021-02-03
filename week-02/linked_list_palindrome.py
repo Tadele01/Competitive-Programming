@@ -4,8 +4,10 @@ class Node:
         self.next = next
 
 class Solution:
-    def isPalindrome(self, node:Node)->bool:
-        return self.checker(node, tail=head)[0]
+    def isPalindrome(self, head:Node)->bool:
+        if not head:
+            return True
+        return self.checker(head, tail=head)[0]
     
     def checker(self, head, tail):
         if not tail.next:

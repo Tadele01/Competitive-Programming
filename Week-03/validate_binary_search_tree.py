@@ -5,7 +5,7 @@ class TreeNode:
         self.right = right
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
-        min_ max_ = -float('inf'), float('inf')
+        min_, max_ = -float('inf'), float('inf')
         return self.traverse_inorder(root, min_, max_)   
     def traverse_inorder(self, root, min_, max_):
         if not root:

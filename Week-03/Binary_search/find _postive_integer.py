@@ -1,5 +1,5 @@
 class Solution:
-    def findSolution(self, customfunction: 'CustomFunction', z: int) -> List[List[int]]:
+    def findSolution(self, customfunction: 'CustomFunction', z: int) -> list[list[int]]:
         x, y = 1, z
         pairs = []
         while x<=z and y>0:

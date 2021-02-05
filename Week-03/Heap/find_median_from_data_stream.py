@@ -1,4 +1,4 @@
-from heapq import heappop, heapify, heappush
+from heapq import heappop, heapify, heappush, heappushpop
 class MedianFinder:
     def __init__(self):
         self.small_elements = [] 

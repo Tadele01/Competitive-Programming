@@ -4,7 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
+    def bstFromPreorder(self, preorder: list[int]) -> TreeNode:
         if len(preorder) == 0:
             return None
         left, right = [], []

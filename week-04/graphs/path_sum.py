@@ -8,10 +8,10 @@ class Solution:
     def hasSum(self, root:TreeNode, targetSum: int)->bool:
         summation = [0]
         return self.get_sum(root, targetSum, summation)
-    def get_sum(self, root, targetSum):
+    def get_sum(self, root, targetSum, summation):
         if not root:
             return
-        summation[0] +=1
+        summation[0] += root.val
         left = self.get_sum(root.left, targetSum, summation)
         if summation[0] == targetSum and (not root.left and not root.right):
             return True

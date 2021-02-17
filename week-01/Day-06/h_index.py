@@ -1,6 +1,6 @@
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
-        citations = sorted(citations)
+        citations = sorted(citations, reverse=True)
         h_index = 0 
         for i, cite in enumerate(citations):
             if cite > i:

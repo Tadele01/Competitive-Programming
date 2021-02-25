@@ -4,15 +4,12 @@ class Solution:
         courses = set([i for i in range(numCourses)])
         if not prerequisites:
             return list(courses)
-        adj_list, result, indegree = defaultdict(list), list(), {}
+        adj_list, result, indegree = defaultdict(list), list(), defaultdict(int)
         for edge in prerequisites:
             adj_list[edge[1]].append(edge[0])
             if edge[1] in adj_list[edge[0]]:
                 return []
-            if edge[0] in indegree:
-                indegree[edge[0]] +=1
-            else:
-                indegree[edge[0]] = 1
+            indegree[edge[0]] +=1
         queue = deque()
         for i in range(numCourses):
             if i not in indegree:

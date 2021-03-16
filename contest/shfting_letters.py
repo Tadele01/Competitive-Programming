@@ -7,8 +7,8 @@ class Solution:
     def get_result(self, arr):
         result = []
         for value in arr:
-            if value > 122:
-                diff = value - 123
+            if value > ord('z'):
+                diff = value - (ord('z')+1)
                 res = ord('a') + (diff % 26)
                 result.append(chr(res))
             else:

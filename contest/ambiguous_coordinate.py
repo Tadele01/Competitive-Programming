@@ -1,6 +1,6 @@
 class Solution(object):
     def ambiguousCoordinates(self, S):
-        def cartesian_product(left, right):
+        def pair_combination(left, right):
             res = []
             coordinates = [left, right]
             result = [[]]
@@ -19,7 +19,7 @@ class Solution(object):
             left, cur_ans = cur_ans, []
             self.find_coordinates(S[i:], cur_ans)
             right, cur_ans = cur_ans, []
-            pairs = cartesian_product(left, right)
+            pairs = pair_combination(left, right)
             for pair in pairs:
                 result.append("({}, {})".format(*pair))
         return result
@@ -31,5 +31,8 @@ class Solution(object):
             right = sub_string[i:]
             if ((not left.startswith('0') or left == '0')
                     and (not right.endswith('0'))):
-                cur_ans.append(left + ('.' if i != length else '') + right)
+                if i != length:
+                    cur_ans.append(left+'.'+right)
+                else:
+                    cur_ans.append(left+right)
                 

@@ -1,8 +1,8 @@
 class Solution(object):
     def ambiguousCoordinates(self, S):
-        def cartesian_product(*args):
+        def cartesian_product(left, right):
             res = []
-            coordinates = [tuple(coordinate) for coordinate in args]
+            coordinates = [left, right]
             result = [[]]
             for coordinate in coordinates:
                 result = [x+[y] for x in result for y in coordinate]

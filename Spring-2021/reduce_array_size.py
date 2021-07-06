@@ -1,4 +1,5 @@
 from collections import Counter
+from typing import List
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
         count_arr = sorted(Counter(arr).values(), reverse=True)
